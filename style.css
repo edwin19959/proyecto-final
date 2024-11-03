@@ -1,0 +1,69 @@
+/* Variables globales */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #343a40;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    --transition-duration: 0.3s;
+}
+
+/* Estilos generales */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Card de comentarios */
+.comment-card {
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Comentarios */
+.comentario {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: var(--box-shadow);
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comentario-nombre {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.comentario-fecha {
+    font-size: 0.9em;
+    color: var(--secondary-color);
+}
+
+.comentario-texto {
+    margin-top: 10px;
+}
+
+/* Mensajes flotantes */
+.mensaje-flotante {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+/* Spinner de carga */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
