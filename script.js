@@ -1,4 +1,4 @@
-// Función para mostrar mensajes
+
 function mostrarMensaje(tipo, mensaje) {
     const alert = $(`
         <div class="alert alert-${tipo} alert-dismissible fade show mensaje-flotante">
@@ -10,7 +10,7 @@ function mostrarMensaje(tipo, mensaje) {
     setTimeout(() => alert.alert('close'), 3000);
 }
 
-// Función para cargar comentarios
+
 function cargarComentarios() {
     $('#loading-comments').removeClass('d-none');
     $('#comentarios').empty();
@@ -43,17 +43,15 @@ function cargarComentarios() {
         });
 }
 
-// Inicialización
 $(document).ready(function() {
     cargarComentarios();
 
-    // Contador de caracteres
     $('#comentario').on('input', function() {
         const restantes = 500 - $(this).val().length;
         $('.caracteres-restantes').text(`${restantes} caracteres restantes`);
     });
 
-    // Manejo del formulario
+    
     $('#comentarioForm').on('submit', function(e) {
         e.preventDefault();
         
@@ -62,7 +60,7 @@ $(document).ready(function() {
         const $btnText = $button.find('.btn-text');
         const $spinner = $button.find('.spinner-border');
         
-        // Deshabilitar botón y mostrar spinner
+ 
         $button.prop('disabled', true);
         $btnText.addClass('d-none');
         $spinner.removeClass('d-none');
@@ -73,7 +71,7 @@ $(document).ready(function() {
                     mostrarMensaje('success', response.message);
                     $form[0].reset();
                     $('.caracteres-restantes').text('500 caracteres restantes');
-                    cargarComentarios(); // Recargar comentarios después de agregar uno nuevo
+                    cargarComentarios(); 
                 } else {
                     mostrarMensaje('danger', response.message);
                 }
